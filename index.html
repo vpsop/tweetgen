@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TwitterGen</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Pacifico&family=Slabo+27px&family=Teko:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top-area">
+        <h1 class="heading">Fake Tweet Generator</h1>
+        <div id="night-mode-btn" class="night-mode">
+          <img class="night-mode-img" src="images/night.png" />
+        </div>
+      </div>
+      <div class="middle-area row">
+        <div class="form-container col-lg-7">
+          <div class="tweet-details-heading side-heading">
+            <p>Tweet Details</p>
+          </div>
+
+          <form action="">
+            <h5>Theme</h5>
+
+            <div class="mt-10">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="light"
+                  name="theme"
+                  value="light"
+                  checked
+                />
+                <label class="form-check-label" for="light">Light</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="dim"
+                  name="theme"
+                  value="dim"
+                />
+                <label class="form-check-label" for="dim">Dim</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  id="dark"
+                  name="theme"
+                  value="dark"
+                />
+                <label class="form-check-label" for="dark">Dark</label>
+              </div>
+            </div>
+
+            <br />
+
+            <h5 class="mt-30">Profile Picture</h5>
+            <input
+              type="file"
+              class="form-control"
+              name="profile-picture"
+              id="pfp"
+            /><br />
+            <p class="detail-hints">
+              PNG and JPEG only. Image should be square or it might get
+              stretched.
+            </p>
+            <h5>Name</h5>
+
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="name"
+            /><br />
+            <h5>Username</h5>
+            <div class="input-group username-input-group">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                pattern="[A-Za-z0-9_]{1,15}"
+                maxlength="15"
+                class="form-control"
+                aria-describedby="inputGroupPrepend"
+              />
+            </div>
+            <br />
+            <p class="detail-hints">
+              15 characters. Can be letters, numbers and underscores.
+            </p>
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                name="isVerified"
+                id="isVerified"
+              />
+              <label class="form-check-label" for="isVerified"
+                ><strong>User Verified</strong></label
+              >
+            </div>
+            <p class="detail-hints detail-hints-verified-mark">
+              Check this if you want that lovely verified tick after your name.
+            </p>
+
+            <br />
+            <h5 id="details-tweet-heading">Tweet</h5>
+
+            <textarea
+              name="tweet-text"
+              id="tweet-text"
+              cols="40"
+              rows="3"
+              maxlength="280"
+              class="form-control"
+            ></textarea
+            ><br />
+            <p class="detail-hints">
+              <span class="current-characters">0</span
+              ><span class="char-limit-separator">/</span
+              ><span class="char-limit">280 characters.</span>
+            </p>
+
+            <h5>Image</h5>
+            <input
+              type="file"
+              class="form-control"
+              name="tweet_image"
+              id="tweet_image"
+            /><br />
+            <p class="detail-hints">Optional. Tweet image to be attached</p>
+
+            <h5>Time</h5>
+            <input
+              type="time"
+              class="form-control"
+              name="tweet_time"
+              id="tweet_time"
+              value="12:01:00"
+            /><br />
+            <p class="detail-hints">Tweet time.</p>
+
+            <h5>Date</h5>
+            <input
+              type="date"
+              class="form-control"
+              name="tweet_date"
+              id="tweet_date"
+              value="2020-01-01"
+            />
+            <br />
+            <p class="detail-hints">Tweet date.</p>
+
+            <h5 class="mt-30">Client</h5>
+            <input
+              type="text"
+              class="form-control"
+              name="tweet_client"
+              id="tweet_client"
+            />
+            <br />
+            <p class="detail-hints">
+              Optional. Twitter client. Example: Twitter for Android, Twitter
+              Web App etc.
+            </p>
+            <div class="container mt-15 tweet-numbers-container">
+              <div class="row">
+                <div class="col-lg-4">
+                  <h5>Retweets</h5>
+                  <input
+                    type="number"
+                    name="retweets_number"
+                    id="retweets_number"
+                    class="form-control tweet-number-form-control"
+                  />
+                  <br />
+                  <p class="detail-hints">Retweets</p>
+                </div>
+
+                <div class="col-lg-4">
+                  <h5>Quote Tweets</h5>
+                  <input
+                    type="number"
+                    name="quotes_number"
+                    id="quotes_number"
+                    class="form-control tweet-number-form-control"
+                  />
+                  <br />
+                  <p class="detail-hints">Quoted Tweets</p>
+                </div>
+
+                <div class="col-lg-4">
+                  <h5>Likes</h5>
+                  <input
+                    type="number"
+                    class="form-control tweet-number-form-control"
+                    name="likes_number"
+                    id="likes_number"
+                  />
+                  <br />
+                  <p class="detail-hints">Likes</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="live-preview col-lg-5">
+          <div class="live-preview-heading side-heading">
+            <p>Live Preview</p>
+          </div>
+          <div id="preview-container-holder">
+            <div class="preview-container" id="preview-container" theme="light">
+              <div class="preview-userinfo row">
+                <div class="preview-pfp col-lg-2">
+                  <img
+                    id="preview-pfp"
+                    class="preview-pfp"
+                    src="images/preview-pfp.png"
+                    alt="preview-profile-pic"
+                  />
+                </div>
+                <div class="preview-name_username col-lg-9">
+                  <p class="preview-name">
+                    <span class="preview-name_text dim-white-text">Name</span
+                    ><span>&nbsp;</span>
+                    <span id="preview-verified" class="tweetIcon dim-white-text"
+                      >&#xe0d0;</span
+                    >
+                  </p>
+
+                  <p class="preview-username-container">
+                    <span>@</span
+                    ><span class="preview-username dim-grey-text"
+                      >Username</span
+                    >
+                  </p>
+                </div>
+
+                <div class="expand-icon col-lg-1">
+                  <span class="tweetIcon dim-grey-text">&#xe0d1;</span>
+                  <!-- <i class="fas fa-chevron-down"></i> -->
+                </div>
+              </div>
+
+              <div class="preview-tweet_text-container">
+                <span class="preview-tweet_text dim-white-text"
+                  >Your tweet goes here!</span
+                >
+              </div>
+
+              <div class="preview-tweet_image-container">
+                <img id="preview-tweet_image" src="" alt="" />
+              </div>
+
+              <div class="tweet-details">
+                <div class="preview-time_date dim-grey-text">
+                  <span>
+                    <span class="preview-time">12:01 PM</span>
+                    <span class="dot-separator">·</span>
+                    <span class="preview-month">Jan</span>
+                    <span class="preview-day">1</span>,
+                    <span class="preview-year">2020</span>
+                    <span class="dot-separator client-separator">·</span>
+                    <span class="preview-client"></span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="preview-tweet_numbers-container initially-hidden">
+                <hr class="tweet-separator" />
+
+                <div class="preview-tweet_numbers dim-grey-text">
+                  <span class="retweets tweet-numbers" id="retweets-display">
+                    <b
+                      id="preview-retweets_number"
+                      class="bold-tweet-numbers dim-white-text"
+                      >20</b
+                    >
+                    Retweet<span id="isRetweetsPlural">s</span>
+                  </span>
+
+                  <span class="quotes tweet-numbers" id="quotes-display">
+                    <b
+                      id="preview-quotes_number"
+                      class="bold-tweet-numbers dim-white-text"
+                      >2</b
+                    >
+                    Quote Tweet<span id="isQuotesPlural">s</span>
+                  </span>
+
+                  <span class="likes tweet-numbers" id="likes-display">
+                    <b
+                      id="preview-likes_number"
+                      class="bold-tweet-numbers dim-white-text"
+                      >200</b
+                    >
+                    Like<span id="isLikesPlural">s</span>
+                  </span>
+                </div>
+              </div>
+
+              <hr class="tweet-separator" />
+
+              <div
+                class="preview-icon_container dim-grey-text"
+                style="margin-bottom: 5px"
+              >
+                <div class="preview-icon">
+                  <span class="tweetIcon">&#xe0d2;</span>
+                </div>
+                <div class="preview-icon">
+                  <span class="tweetIcon">&#xe0d3;</span>
+                </div>
+                <div class="preview-icon">
+                  <span class="tweetIcon">&#xe0d4;</span>
+                </div>
+                <div class="preview-icon">
+                  <span class="tweetIcon">&#xe0d5;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="generate-btn-container initially-hidden">
+            <button type="button" class="btn generate-btn btn-primary btn-lg">
+              Generate Image
+            </button>
+          </div>
+
+          <div class="generated-img-container" id="generated-img-container">
+            <img src="" id="generated-img" />
+          </div>
+
+          <div class="download-btn-container initially-hidden">
+            <button type="button" class="btn download-btn btn-primary btn-lg">
+              Download Image
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer-area">
+      <p class="footer-text">
+        Made with<span class="footer-heart"> ❤ </span>by Varun
+      </p>
+    </div>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/45203f5ea1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/generate.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/preview-theme.js"></script>
+    <script src="js/nightmode.js"></script>
+  </body>
+</html>

@@ -1,0 +1,341 @@
+@font-face {
+  font-family: "Tweetgen Icons";
+  src: url("TweetIcons.woff"), url("TweetIcons.otf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Sans";
+}
+
+h5 {
+  font-family: "Slabo 27px";
+  margin: 12px 0px 5px 0px;
+  font-size: 22px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.initially-hidden {
+  display: none;
+}
+
+.top-area {
+  text-align: center;
+  font-family: "Pacifico";
+  font-size: 28px;
+}
+
+.heading {
+  padding-top: 2%;
+  color: #1da1f2;
+}
+
+.side-heading {
+  font-family: "Teko";
+  font-weight: 500;
+  font-size: 40px;
+}
+
+/* Night Mode Css */
+.night-mode {
+  position: absolute;
+  right: 5%;
+  top: 2%;
+}
+
+.night-mode-img {
+  height: 38px;
+  width: 38px;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+.night-mode-enabled {
+  background-color: #121212;
+}
+
+/* Tweet Generator */
+
+.tweet-details-heading {
+  text-align: left;
+  margin-top: 8%;
+  margin-bottom: 5%;
+}
+
+.tweet-numbers-container {
+  padding: 0 0;
+}
+
+.username-input-group {
+  width: 50%;
+}
+
+#details-tweet-heading {
+  margin-top: 3px;
+}
+
+.detail-hints {
+  font-size: 13px;
+  position: relative;
+  bottom: 23px;
+  color: grey;
+  width: 45%;
+}
+
+.detail-hints-verified-mark {
+  position: relative;
+  bottom: 0px;
+  top: 2px;
+}
+
+/* Live Preview */
+
+.tweet-separator {
+  width: 450px;
+  margin: 10px auto;
+  color: #bbbfc4;
+}
+
+.tweetIcon {
+  font-family: "Tweetgen Icons" !important;
+  vertical-align: text-bottom;
+  font-size: 1.25em;
+}
+
+.live-preview-heading {
+  text-align: center;
+  margin-top: 11%;
+  margin-bottom: 5%;
+}
+
+.preview-container {
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto, Helvetica, Arial;
+  width: 480px;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#preview-container-holder {
+  display: flex;
+  width: fit-content;
+  border: 1px solid #ced4da;
+  
+}
+
+.preview-userinfo {
+  padding: 5px 15px;
+  margin-top: 10px;
+  /* padding-top: 15px; */
+
+}
+
+.preview-pfp {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: inline;
+}
+
+.preview-name_username p {
+  padding-left: 13px;
+}
+
+#preview-verified {
+  vertical-align: bottom;
+  color: rgb(29, 161, 242);
+  font-size: 1.1em;
+  font-weight: normal;
+  position: absolute;
+  display: none;
+}
+
+.fa-chevron-down {
+  color: rgb(101, 119, 134);
+}
+
+.preview-name {
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.preview-username-container {
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(101, 119, 134);
+}
+
+.expandable-symbol {
+  height: 7.41px;
+  width: 12px;
+}
+
+.preview-tweet_text-container {
+  color: #000;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  font-size: 23px;
+  line-height: 1.3125;
+  overflow-wrap: break-word;
+}
+
+.preview-tweet_text {
+  white-space: pre-wrap;
+}
+
+.preview-tweet_image-container {
+  text-align: center;
+}
+
+#preview-tweet_image {
+  width: 448px;
+  height: auto;
+  overflow: hidden;
+  display: none;
+  border-radius: 15px;
+  margin-bottom: 14px;
+}
+
+.preview-time_date {
+  padding: 0 15px;
+  color: rgb(101, 119, 134);
+  font-size: 15px;
+  overflow-wrap: break-word;
+  font-weight: 400;
+}
+
+.client-separator {
+  display: none;
+}
+
+.preview-client {
+  color: #1da1f2;
+}
+
+.preview-tweet_numbers {
+  padding: 5px 15px;
+  color: rgb(101, 119, 134);
+}
+
+.tweet-numbers {
+  margin-right: 20px;
+}
+
+.bold-tweet-numbers {
+  font-weight: bold;
+  color: #000;
+}
+
+.preview-icon_container {
+  text-align: center;
+}
+
+.preview-icon {
+  color: rgb(101, 119, 134);
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 35px;
+}
+
+/* Preview Dim */
+
+.preview-dim {
+  background-color: rgb(21, 32, 43);
+}
+
+.white-text {
+  color: #fff !important;
+}
+
+.grey-text {
+  color: rgb(145, 162, 176);
+}
+
+/* Preview Dark */
+
+.preview-dark {
+  background-color: #000;
+}
+
+/* Generate Button CSS */
+
+.generate-btn-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* Download Button Css */
+
+.download-btn-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* Generated Image  */
+
+#canvas {
+  width: 480px;
+  height: auto;
+}
+
+.generated-img-container {
+  margin-top: 30px;
+  background-color: grey;
+  display: flex;
+  width: fit-content;
+}
+
+#generated-img{
+  padding: 10px;
+}
+
+/* Footer Area */
+
+.footer-area {
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  height: 100px;
+  background-color: #1da1f2;
+  text-align: center;
+}
+
+.footer-text {
+  margin: 0;
+  padding: 40px;
+  padding-bottom: 0;
+  white-space: nowrap;
+  color: white;
+}
+
+.footer-heart {
+  color: red;
+}
+
+.dark-footer {
+  background-color: #242424;
+}
+
+/* Bootstrap Modifications */
+
+.form-control {
+  width: 50%;
+}
+
+.tweet-number-form-control {
+  width: 80%;
+}
